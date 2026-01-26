@@ -1,0 +1,1 @@
+﻿SELECT * FROM devices WHERE id = @DeviceId

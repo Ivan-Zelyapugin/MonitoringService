@@ -1,0 +1,12 @@
+﻿using MonitoringService.DataAccess.Dapper.Interfaces;
+using MonitoringService.DataAccess.Dapper.Models;
+using Microsoft.Extensions.Configuration;
+
+namespace MonitoringService.DataAccess.Settings
+{
+    public class MonitoringDatabase(IConfiguration configuration) : IDapperSettings
+    {
+        public string ConnectionString => configuration.GetSection("MonitoringDatabase")["ConnectionString"];
+        public Provider Provider => Enum.Parse<Provider>(configuration.GetSection("MonitoringDatabase")["Provider"]);
+    }
+}

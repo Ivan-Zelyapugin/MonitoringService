@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Migrations\001_CreateDevices.sql" />
+    <None Remove="Migrations\002_CreateActivitySessions.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\001_CreateDevices.sql" />
+    <EmbeddedResource Include="Migrations\002_CreateActivitySessions.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="dbup" Version="5.0.41" />
+    <PackageReference Include="dbup-postgresql" Version="6.1.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.2" />
+    <PackageReference Include="Npgsql" Version="10.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MonitoringService.Models\MonitoringService.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Repositories\Scripts\Sql.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Sql.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Repositories\Scripts\Sql.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sql.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
