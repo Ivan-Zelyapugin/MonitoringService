@@ -10,12 +10,14 @@ namespace MonitoringService.Services
     /// </summary>
     public class SessionService(IActivitySessionRepository repository, ILogger<SessionService> logger) : ISessionService
     {
+        /// <inheritdoc />
         public async Task AddAsync(ActivitySession session)
         {
             logger.LogInformation("Добавление сессии {DeviceId}", session.DeviceId);
             await repository.AddSessionAsync(session);
         }
 
+        /// <inheritdoc />
         public async Task<List<ActivitySession>> GetByDeviceIdAsync(Guid deviceId)
         {
             logger.LogInformation("Запрос сессий {DeviceId}", deviceId);

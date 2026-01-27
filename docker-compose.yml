@@ -35,6 +35,18 @@ services:
     networks:
       - application
 
+  frontend:
+    build:
+      context: ../monitoring-spa
+      dockerfile: Dockerfile
+    container_name: monitoring-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - monitoringservice.api
+    networks:
+      - application
+
 networks:
   application:
     driver: bridge

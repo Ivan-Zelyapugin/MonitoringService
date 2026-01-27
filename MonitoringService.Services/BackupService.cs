@@ -12,6 +12,7 @@ namespace MonitoringService.Services
     {
         private readonly string _backupFolder = "backups";
 
+        /// <inheritdoc />
         public async Task<(byte[] FileContent, string FileName)> BackupAsync()
         {
             logger.LogInformation("Начало создания бэкапа");

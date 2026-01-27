@@ -12,6 +12,7 @@ namespace MonitoringService.DataAccess.Repositories
     /// </summary>
     public class DeviceRepository(IDapperContext<IDapperSettings> dapperContext, ILogger<DeviceRepository> logger) : IDeviceRepository
     {
+        /// <inheritdoc />
         public async Task AddDeviceAsync(Device device)
         {
             logger.LogInformation("Добавление нового устройства {DeviceId}", device.Id);
@@ -19,12 +20,14 @@ namespace MonitoringService.DataAccess.Repositories
             logger.LogInformation("Устройство {DeviceId} успешно добавлено", device.Id);
         }
 
+        /// <inheritdoc />
         public async Task<Device> GetDeviceAsync(Guid deviceId)
         {
             logger.LogDebug("Запрос Device из БД {DeviceId}", deviceId);
             return await dapperContext.FirstOrDefault<Device>(new QueryObject(Sql.GetDevice, new { deviceId }));
         }
 
+        /// <inheritdoc />
         public async Task<List<Device>> GetAllDevicesAsync()
         {
             logger.LogDebug("Запрос всех устройств из БД");

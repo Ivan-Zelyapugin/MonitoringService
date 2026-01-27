@@ -7,6 +7,12 @@ namespace MonitoringService.Api.Middlewares
     /// </summary>
     public class ExceptionHandlingMiddleware(ILogger<ExceptionHandlingMiddleware> logger) : IMiddleware
     {
+        /// <summary>
+        /// Асинхронно обрабатывает HTTP-запрос, перехватывая исключения,
+        /// логируя их и формируя корректный HTTP-ответ.
+        /// </summary>
+        /// <param name="context">Контекст HTTP-запроса и ответа.</param>
+        /// <param name="next">Делегат следующего middleware в конвейере.</param>
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try

@@ -9,7 +9,10 @@ namespace MonitoringService.DataAccess.Settings
     /// </summary>
     public class MonitoringDatabase(IConfiguration configuration) : IDapperSettings
     {
+        /// <inheritdoc />
         public string ConnectionString => configuration.GetSection("MonitoringDatabase")["ConnectionString"];
+
+        /// <inheritdoc />
         public Provider Provider => Enum.Parse<Provider>(configuration.GetSection("MonitoringDatabase")["Provider"]);
     }
 }

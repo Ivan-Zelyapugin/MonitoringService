@@ -12,6 +12,7 @@ namespace MonitoringService.DataAccess.Repositories
     /// </summary>
     public class ActivitySessionRepository(IDapperContext<IDapperSettings> dapperContext, ILogger<ActivitySessionRepository> logger) : IActivitySessionRepository
     {
+        /// <inheritdoc />
         public async Task AddSessionAsync(ActivitySession session)
         {
             logger.LogInformation("Добавление новой сессии для устройства {DeviceId}", session.DeviceId);
@@ -19,6 +20,7 @@ namespace MonitoringService.DataAccess.Repositories
             logger.LogInformation("Сессия для устройства {DeviceId} успешно добавлена", session.DeviceId);
         }
 
+        /// <inheritdoc />
         public async Task<List<ActivitySession>> GetSessionsByDeviceIdAsync(Guid deviceId)
         {
             logger.LogDebug("Запрос всех сессий для устройства {DeviceId}", deviceId);

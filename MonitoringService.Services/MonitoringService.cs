@@ -11,6 +11,7 @@ namespace MonitoringService.Services
     /// </summary>
     public class MonitoringService(IDeviceService deviceService, ISessionService sessionService, ILogger<MonitoringService> logger) : IMonitoringService
     {
+        /// <inheritdoc />
         public async Task ProcessAsync(DeviceActivityDto dto)
         {
             logger.LogInformation("Обработка данных активности устройства {DeviceId}", dto.Id);

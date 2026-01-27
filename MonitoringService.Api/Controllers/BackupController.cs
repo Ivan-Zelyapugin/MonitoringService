@@ -8,7 +8,7 @@ namespace MonitoringService.Api.Controllers
     /// </summary>
     [ApiController]
     [Route("api/backup")]
-    public class BackupController(IBackupService backupService, ILogger<BackupController> logger) : ControllerBase
+    public class BackupController(IBackupService backupService) : ControllerBase
     {
         /// <summary>
         /// Создает бэкап всех устройств и сессий.

@@ -26,7 +26,6 @@
         /// Выполняет запрос в БД и использует транзакцию, если требуется.
         /// </summary>
         /// <param name="queryObject"><see cref="IQueryObject"/>.</param>
-        /// <param name="transaction">Транзакция, которую нужно использовать при запросе.</param>
         Task Command(IQueryObject queryObject);
     }
 }

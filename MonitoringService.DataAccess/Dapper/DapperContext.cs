@@ -14,6 +14,11 @@ namespace MonitoringService.DataAccess.Dapper
         private readonly string _connectionString;
         private readonly Provider _provider;
 
+        /// <summary>
+        /// Создаёт новый экземпляр <see cref="DapperContext{TSettings}"/> для работы с базой данных.
+        /// </summary>
+        /// <param name="settings">Настройки подключения, реализующие <see cref="IDapperSettings"/>.</param>
+        /// <exception cref="ArgumentException">Выбрасывается, если <paramref name="settings"/> равен <c>null</c>.</exception>
         public DapperContext(IDapperSettings settings)
         {
             if (settings == null)
@@ -25,16 +30,19 @@ namespace MonitoringService.DataAccess.Dapper
             _provider = settings.Provider;
         }
 
+        /// <inheritdoc />
         public async Task<T> FirstOrDefault<T>(IQueryObject queryObject)
         {
             return await Execute(query => query.QueryFirstOrDefaultAsync<T>(queryObject.Sql, queryObject.Params, commandTimeout: queryObject.CommandTimeout)).ConfigureAwait(false);
         }
 
+        /// <inheritdoc />
         public async Task<List<T>> ListOrEmpty<T>(IQueryObject queryObject)
         {
             return (await Execute(query => query.QueryAsync<T>(queryObject.Sql, queryObject.Params, commandTimeout: queryObject.CommandTimeout)).ConfigureAwait(false)).AsList();
         }
 
+        /// <inheritdoc />
         public async Task Command(IQueryObject queryObject)
         {
             await CommandExecute(queryObject);
