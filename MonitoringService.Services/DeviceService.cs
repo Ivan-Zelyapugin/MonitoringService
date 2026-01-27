@@ -17,11 +17,6 @@ namespace MonitoringService.Services
 
             var device = await repository.GetDeviceAsync(id);
 
-            if (device == null)
-            {
-                throw new DeviceNotFoundException(id);
-            }
-
             logger.LogDebug("Устройство {DeviceId} успешно найдено", id);
 
             return device;
