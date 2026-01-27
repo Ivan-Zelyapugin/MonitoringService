@@ -10,8 +10,17 @@ using System.Reflection;
 
 namespace MonitoringService.DataAccess.Extensions
 {
+    /// <summary>
+    /// Класс с методами расширения для добавления функциональности слоя доступа к данным.
+    /// </summary>
     public static class DataAccessExtensions
     {
+        /// <summary>
+        /// Выполняет миграцию базы данных.
+        /// </summary>
+        /// <param name="services"><see cref="IServiceCollection"/>.</param>
+        /// <param name="configuration"><see cref="IConfiguration"/>.</param>
+        /// <returns><see cref="IServiceCollection"/>.</returns>
         public static IServiceCollection MigrateDatabase(this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration.GetSection("MonitoringDatabase")["ConnectionString"];
@@ -34,6 +43,11 @@ namespace MonitoringService.DataAccess.Extensions
             return services;
         }
 
+        /// <summary>
+        /// Добавляет поддержку Dapper.
+        /// </summary>
+        /// <param name="services"><see cref="IServiceCollection"/>.</param>
+        /// <returns><see cref="IServiceCollection"/>.</returns>
         public static IServiceCollection AddDapper(this IServiceCollection services)
         {
             return services
@@ -41,6 +55,11 @@ namespace MonitoringService.DataAccess.Extensions
                 .AddSingleton<IDapperContext<IDapperSettings>, DapperContext<IDapperSettings>>();
         }
 
+        /// <summary>
+        /// Добавляет репозитории.
+        /// </summary>
+        /// <param name="services"><see cref="IServiceCollection"/>.</param>
+        /// <returns><see cref="IServiceCollection"/>.</returns>
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             return services

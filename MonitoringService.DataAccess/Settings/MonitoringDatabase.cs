@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace MonitoringService.DataAccess.Settings
 {
+    /// <summary>
+    /// Настройки Dapper для MonitoringDatabase.
+    /// </summary>
     public class MonitoringDatabase(IConfiguration configuration) : IDapperSettings
     {
         public string ConnectionString => configuration.GetSection("MonitoringDatabase")["ConnectionString"];

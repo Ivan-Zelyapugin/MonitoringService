@@ -2,6 +2,9 @@
 
 namespace MonitoringService.DataAccess.Dapper.Models
 {
+    /// <summary>
+    /// Запрос к БД.
+    /// </summary>
     public class QueryObject : IQueryObject
     {
         public string Sql { get; }

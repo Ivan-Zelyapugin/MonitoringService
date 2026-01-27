@@ -5,6 +5,10 @@ using System.Data;
 
 namespace MonitoringService.DataAccess.Dapper
 {
+    /// <summary>
+    /// Контекст Dapper для работы с БД.
+    /// </summary>
+    /// <typeparam name="TSettings"><see cref="IDapperSettings"/>.</typeparam>
     public class DapperContext<TSettings> : IDapperContext<TSettings> where TSettings : IDapperSettings
     {
         private readonly string _connectionString;
