@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringService.Api", "Mo
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{81DDED9D-158B-E303-5F62-77A2896D2A5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringService.Tests", "..\MonitoringService.Tests\MonitoringService.Tests.csproj", "{F6DA1A24-679C-4B18-A747-8349818B77C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringService.Tests", "MonitoringService.Tests\MonitoringService.Tests.csproj", "{B1974C3A-51D9-FF8A-0634-5BAA8EDE1BAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81DDED9D-158B-E303-5F62-77A2896D2A5A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6DA1A24-679C-4B18-A747-8349818B77C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6DA1A24-679C-4B18-A747-8349818B77C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6DA1A24-679C-4B18-A747-8349818B77C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6DA1A24-679C-4B18-A747-8349818B77C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1974C3A-51D9-FF8A-0634-5BAA8EDE1BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1974C3A-51D9-FF8A-0634-5BAA8EDE1BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1974C3A-51D9-FF8A-0634-5BAA8EDE1BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1974C3A-51D9-FF8A-0634-5BAA8EDE1BAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
